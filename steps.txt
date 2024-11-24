@@ -1,0 +1,13 @@
+git clone repo.git
+git status
+#editting files and creating of files
+git add .
+git status
+cd
+ssh-keygen -t rsa -b 4096 -C "email"
+# asking for ssh stuff and folder
+ls | grep ###.pub
+cat ###.pub
+#paste contents in GitHub 
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_rsa
