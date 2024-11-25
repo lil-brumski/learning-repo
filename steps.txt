@@ -1,27 +1,30 @@
+For creating repo remotely first:
+
 git clone repo.git
 git status
-
 #editting files and creating of files
-
 git add .
 git status
-
+git commit -m "###*
 cd
 ssh-keygen -t rsa -b 4096 -C "email"
-
 cat ~/.ssh/id_rsa.pub
-
 #paste contents in GitHub 
-
-
-eval "$(ssh-agent -s)" 
-                 
+eval "$(ssh-agent -s)"                
 ssh-add ~/.ssh/id_rsa
-
 cd ##
-
 git remote set-url origin git@github.com:username/repo.git
-
 git remote -v
+git push origin the_branch
 
+For creating from device/locally:
+
+git init
+git status 
+git add .
+git status
+git commit -m "###"
+#create repo
+git remote add origin ssh-link.git
+git remote -v
 git push origin the_branch
