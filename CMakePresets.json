@@ -1,43 +1,41 @@
 {
     "version": 8,
     "configurePresets": [
-        {
-            "name": "MSVC_Release",
-            "displayName": "MSVC Release",
-            "description": "Sets VS 17 as generator",
-            "generator": "Visual Studio 17 2022",
-            "binaryDir": "${sourceDir}/out/build/${presetName}",
-            "cacheVariables": {
-                "CMAKE_MSVC_RUNTIME_LIBRARY": "MultiThreaded",
-                "CMAKE_BUILD_TYPE": "Release",
-                "CMAKE_TOOLCHAIN_FILE": ""
-            }            
-        },
-
-        {
-            "name": "MSVC_Debug",
-            "displayName": "MSVC Debug",
-            "description": "Sets VS 17 as generator",
-            "generator": "Visual Studio 17 2022",
-            "binaryDir": "${sourceDir}/out/build/${presetName}",
-            "cacheVariables": {
-                "CMAKE_MSVC_RUNTIME_LIBRARY": "MultiThreaded",
-                "CMAKE_BUILD_TYPE": "Debug",
-                "CMAKE_TOOLCHAIN_FILE": ""
-            }
+      {
+        "name": "dsa",
+        "displayName": "Data Structures",
+        "generator": "Ninja",
+        "binaryDir": "${sourceDir}/build/${presetName}",
+        "cacheVariables": {
+          "CMAKE_CXX_COMPILER": "C:/Strawberry/c/bin/g++.exe",
+          "CMAKE_BUILD_TYPE": "Release"
         }
+      },
+
+      {
+        "name": "dsa-msvc",
+        "displayName": "Data Structures",
+        "generator": "Visual Studio 17 2022",
+        "binaryDir": "${sourceDir}/build/${presetName}",
+        "cacheVariables": {
+          "CMAKE_BUILD_TYPE": "Release",
+          "CMAKE_MSVC_RUNTIME_LIBRARY":"MultiThreaded"
+        }
+      }
     ],
 
     "buildPresets": [
-        {
-            "name": "Build_Release",
-            "configurePreset": "MSVC_Release",
-            "configuration": "Release"
-        },
-        {
-            "name": "Build_Debug",
-            "configurePreset": "MSVC_Debug",
-            "configuration": "Debug"
-        }
+      {
+        "name": "dsa",
+        "configurePreset": "dsa",
+        "configuration": "Release"
+      },
+
+      {
+        "name": "dsa-msvc",
+        "configurePreset": "dsa-msvc",
+        "configuration": "Release"
+      }
     ]
+
 }
